@@ -1,15 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import theme from "./theme.js"; // Import the custom theme
+import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import * as serviceWorker from './serviceWorker';
+import { ChakraProvider} from '@chakra-ui/react'
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
 root.render(
-  <React.StrictMode>
+  <ChakraProvider theme={theme}>
     <App />
-  </React.StrictMode>
+  </ChakraProvider>
 );
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

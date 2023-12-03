@@ -6,6 +6,7 @@ const theme = extendTheme({
     global: {
       body: {
         bg: "white", // Set the background color to white
+        color:"black"
       },
     },
   },

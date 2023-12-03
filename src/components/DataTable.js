@@ -106,6 +106,7 @@ export default function DataTable() {
                   onChange={handleAllCheckbox}
                   size="md"
                   colorScheme="blue"
+                  borderColor='black'
                 />
               </Th>
               <Th >Name</Th>
@@ -116,9 +117,9 @@ export default function DataTable() {
           </Thead>
           <Tbody>
             {currentUsers.map(item => (
-              <Tr key={item.key} colorScheme="grey">
+              <Tr key={item.key} _hover={{bg:'gray.200'}}>
                 <Td>
-                  <Checkbox
+                  <Checkbox borderColor='black' 
                     isChecked={checkboxId.includes(item.id)}
                     onChange={() => {
                       handleCheckboxChange(item.id);
